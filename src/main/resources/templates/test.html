@@ -7,5 +7,9 @@
     </head>
 <body>
     <div th:text="${msg}"></div>
+    <div th:utext="${msg}"></div>
+    <hr>
+    <h2 th:each="user:${users}" th:text="${user}"></h2>
+    <h2 th:each="user:${users}"> [[${user}]]</h2>
 </body>
 </html>
