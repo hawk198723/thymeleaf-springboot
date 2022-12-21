@@ -9,8 +9,8 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 public class Employee {
-    private  Integer id;
-    private  String lastName;
+    private Integer id;
+    private String lastName;
     private String email;
     private Integer gender;
     private Department department;

@@ -18,8 +18,8 @@ public class EmployeeDao {
 
         employees = new HashMap<Integer, Employee>();
 
-        employees.put(101,new Employee(1001, "Jason","jason232424@gmail.com",1,new Department(101,"admin")));
-        employees.put(102,new Employee(1002, "Lucas","lucaserer4@gmail.com",1,new Department(102,"op")));
+        employees.put(101,new Employee(1001, "Wong","jason232424@gmail.com",1,new Department(101,"admin")));
+        employees.put(102,new Employee(1002, "Hernandez","lucaserer4@gmail.com",1,new Department(102,"op")));
         employees.put(103,new Employee(1003, "Cheng","2456ff24@gmail.com",0,new Department(103,"eng")));
         employees.put(104,new Employee(1004, "Green","rtyry424@gmail.com",0,new Department(104,"combat")));
         employees.put(105,new Employee(1005, "Beaver","2drer4@gmail.com",0,new Department(105,"supply")));
