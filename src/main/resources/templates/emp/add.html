@@ -79,38 +79,43 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
-            <h2>
+            <form th:action="@{/emp}" method="post">
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" name="lastName" class="form-control" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="Email">
+                </div>
 
-            <a class="btn btn-sm btn-success" th:href="@{/emp}">Add Employee</a></h2>
-            <div class="table-responsive">
-                <table class="table table-striped table-sm">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>LastName</th>
-                            <th>Email</th>
-                            <th>Gender</th>
-                            <th>Department</th>
-                            <th>DOB</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="emp:${emps}">
-                            <td th:text="${emp.getId()}"></td>
-                            <td th:text="${emp.getLastName()}"></td>
-                            <td th:text="${emp.getEmail()}"></td>
-                            <td th:text="${emp.getGender()==0?'Male':'Female'}"></td>
-                            <td th:text="${emp.getDepartment().department}"></td>
-                            <td th:text="${#dates.format(emp.getBirth(),'MM/dd/yyyy')}"></td>
-                            <td>
-                                <a class="btn btn-sm btn-primary">Edit</a>
-                                <a class="btn btn-sm btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <div>
+                    <label>Gender</label><br/>
+                    <div class="form-check form-check-inline">
+                        <label class="radio-inline">
+                             <input type="radio" name="gender" value="1"> Male
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="radio-inline">
+                            <input type="radio" name="gender" value="0"> female
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Department</label>
+                    <select class="form-control" name="department.id">
+                        <option th:each="dept:${departments}" th:text="${dept.getDepartment()}"
+                                th:value="${dept.getId()}"/>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="date" name="birth" class="form-control" placeholder="Birthday">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </main>
     </div>
 </div>
