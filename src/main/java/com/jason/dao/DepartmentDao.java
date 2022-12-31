@@ -16,7 +16,7 @@ public class DepartmentDao {
         departments = new HashMap<Integer, Department>();
 
         departments.put(101,new Department(101, "admin"));
-        departments.put(102,new Department(102, "op"));
+        departments.put(102,new Department(102, "ops"));
         departments.put(103,new Department(103, "eng"));
         departments.put(104,new Department(104, "combat"));
         departments.put(105,new Department(105, "supply"));
