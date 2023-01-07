@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -40,5 +41,13 @@ public class EmployeeController {
         System.out.println("save=>" + employee);
         employeeDao.save(employee);
         return "redirect:/emps";
+    }
+
+    //redirect to empUpdate page
+    @GetMapping("/emp/{id}")
+    public String toUpdateEmp(@PathVariable("id") Integer id, Model model){
+        //post original data
+
+        return "emp/update";
     }
 }
